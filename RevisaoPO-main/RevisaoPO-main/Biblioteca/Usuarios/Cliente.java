@@ -1,6 +1,6 @@
 package Biblioteca.Usuarios;
 
-import Biblioteca.Midia;
+import Biblioteca.*;
 
 public class Cliente extends Usuario {
 

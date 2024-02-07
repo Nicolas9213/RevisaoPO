@@ -1,6 +1,6 @@
 package Biblioteca.Usuarios;
 
-import Biblioteca.Midia;
+import Biblioteca.*;
 
 public abstract class Funcionario extends Usuario {
     //Atributos do funcionário
@@ -33,6 +33,8 @@ public abstract class Funcionario extends Usuario {
         }
         return false;
     }
+
+
 
     @Override
     protected boolean addEmprestimo(Midia midia) {

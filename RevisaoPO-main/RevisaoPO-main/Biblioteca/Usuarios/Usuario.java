@@ -1,6 +1,6 @@
 package Biblioteca.Usuarios;
 
-import Biblioteca.Midia;
+import Biblioteca.*;
 import Biblioteca.Midias.*;
 import java.util.ArrayList;
 
@@ -51,6 +51,14 @@ public abstract class Usuario {
             }
         }
         return null;
+    }
+
+    public String consultarMidia(int codigo) {
+        Midia midia = Midia.procurarMidia(codigo);
+        if (midia == null) {
+            return "Mídia não encontrada";
+        }
+        return midia.toString();
     }
 
     protected abstract boolean addEmprestimo(Midia midia);

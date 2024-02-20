@@ -78,4 +78,17 @@ public abstract class Usuario {
         }
         return qtd;
     }
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "nome='" + nome + '\'' +
+                ", usuario='" + usuario + '\'' +
+                ", senha='" + senha + '\'' +
+                '}';
+    }
+
+    public ArrayList<Midia> getEmprestimos() {
+        return emprestimos;
+    }
 }

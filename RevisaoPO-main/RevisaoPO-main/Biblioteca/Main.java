@@ -28,9 +28,8 @@ public class Main {
 
     public static void cadastroUsuario() {
         System.out.println("");
-
-        Usuario cliente = new Cliente("Nicolas", "nicolasg", "123456");
-        Usuario.addUsuario(Cliente);
+        Usuario usuario = new Cliente("Nicolas", "nicolasg", "123456");
+        Usuario.addUsuario(usuario);
     }
 
     private static void login() {
@@ -49,6 +48,7 @@ public class Main {
                 4- Ver perfil:
                 5- Consultar disponibilidade de mídia:
                 """);
+
         if (usuarioLogado instanceof Funcionario) {
             System.out.println("""
                     6- Cadastrar cliente:

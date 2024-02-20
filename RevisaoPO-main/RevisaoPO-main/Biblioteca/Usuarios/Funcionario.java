@@ -45,4 +45,17 @@ public abstract class Funcionario extends Usuario {
         }
         return false;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() +
+                "Funcionario{" +
+                "matricula=" + matricula +
+                ", salario=" + salario +
+                '}';
+    }
+
+    public String verMidias() {
+        return Midia.getMidias().toString();
+    }
 }

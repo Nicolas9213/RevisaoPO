@@ -1,6 +1,9 @@
 package Biblioteca;
 
+import Biblioteca.Midias.DVD;
+import Biblioteca.Midias.Jornal;
 import Biblioteca.Midias.Livro;
+import Biblioteca.Midias.Revista;
 import Biblioteca.Usuarios.*;
 
 import java.util.Scanner;
@@ -123,22 +126,35 @@ public class Main {
                 """);
     }
 
-    //Falta terminar implementação
     private static void cadastroMidia() {
         opcoesCadastroMidia();
+
+        int escolha = sc.nextInt();
 
         System.out.println("Nome: ");
         String nome = sc.next();
         System.out.println("Código: ");
         int codigo = sc.nextInt();
 
+        if (escolha == 1) {
+            Midia midia = new DVD(nome, codigo);
+            Midia.addMidia(midia);
+        } else if (escolha == 2) {
+            Midia midia = new Jornal(nome, codigo);
+            Midia.addMidia(midia);
+        } else if (escolha == 3) {
+            Midia midia = new Livro(nome, codigo);
+            Midia.addMidia(midia);
+        } else if (escolha == 4) {
+            Midia midia = new Revista(nome, codigo);
+            Midia.addMidia(midia);
+        }
+        menuUsuario();
 
-        Midia midia = new Livro(nome, codigo);
-        Midia.addMidia(midia);
     }
 
     private static void emprestarMidia() {
-        System.out.println("Digite o código da midia: ");
+        System.out.println("Digite o código da mídia: ");
         int codigo = sc.nextInt();
 
         Midia midia = Midia.procurarMidia(codigo);

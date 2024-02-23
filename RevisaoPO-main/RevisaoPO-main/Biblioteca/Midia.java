@@ -8,9 +8,16 @@ public abstract class Midia {
 
     private boolean emprestada;
 
+    private String nome;
+
     private int codigo;
 
     private static final ArrayList<Midia> midias = new ArrayList<>();
+
+    public Midia(String nome, int codigo) {
+        this.nome = nome;
+        this.codigo = codigo;
+    }
 
     public static Midia procurarMidia(int codigo) {
         for (Midia midia : midias) {

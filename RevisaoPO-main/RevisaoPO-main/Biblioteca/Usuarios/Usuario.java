@@ -31,7 +31,16 @@ public abstract class Usuario {
         usuarios.remove(usuario);
     }
 
-    public String consultaMidia(int condigo) {
+    public static Usuario getUsuarioByUsername(String username) {
+        for (Usuario usuarioAvaliado : usuarios) {
+            if(usuarioAvaliado.usuario.equals(username)){
+                return usuarioAvaliado;
+            }
+        }
+        return null;
+    }
+
+    public String consultaMidia(int codigo) {
         return "";
     }
 
@@ -43,6 +52,9 @@ public abstract class Usuario {
         return nome;
     }
 
+    public String getUsuario() {
+        return usuario;
+    }
     public static Usuario login(String username, String senha) {
         for (Usuario usuarioAvaliado : usuarios) {
             if(usuarioAvaliado.usuario.equals(username) &&
@@ -90,5 +102,17 @@ public abstract class Usuario {
 
     public ArrayList<Midia> getEmprestimos() {
         return emprestimos;
+    }
+
+    public void setNome(String novoNome) {
+        this.nome = novoNome;
+    }
+
+    public void setSenha(String novaSenha){
+        this.senha = novaSenha;
+    }
+
+    public void mostrarEmprestimos(){
+
     }
 }
